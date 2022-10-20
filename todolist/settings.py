@@ -16,7 +16,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-AUTH_USER_MODEL = 'users.CustomUser'
+AUTH_USER_MODEL = 'todo.Profile'
 # Application definition
 
 INSTALLED_APPS = [

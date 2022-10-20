@@ -5,26 +5,23 @@ from .models import Task, Stage, Profile, Departament
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
     list_display = [
-        'title', 'comment', 'user', 'date_add', 'deadline', 'date_end'
+        'title',  'text', 'stage', 'comment', 'user',
+        'date_add', 'deadline', 'date_end'
         ]
-    
 
-@admin.register(Task)
-class TaskAdmin(admin.ModelAdmin):
-    list_display = [
-        'title', 'comment', 'user', 'date_add', 'deadline', 'date_end'
-        ]
-    
 
-@admin.register(Task)
-class TaskAdmin(admin.ModelAdmin):
-    list_display = [
-        'title', 'comment', 'user', 'date_add', 'deadline', 'date_end'
-        ]
-    
+@admin.register(Stage)
+class StageAdmin(admin.ModelAdmin):
+    list_display = ['title']
 
-@admin.register(Task)
-class TaskAdmin(admin.ModelAdmin):
+
+@admin.register(Departament)
+class DepartamentAdmin(admin.ModelAdmin):
+    list_display = ['title']
+
+
+@admin.register(Profile)
+class ProfilekAdmin(admin.ModelAdmin):
     list_display = [
-        'title', 'comment', 'user', 'date_add', 'deadline', 'date_end'
+        'username', 'departament'
         ]
