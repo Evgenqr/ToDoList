@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todo',
     'debug_toolbar',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
