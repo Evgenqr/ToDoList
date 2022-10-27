@@ -20,7 +20,7 @@ class Profile(AbstractUser):
                                 verbose_name="Имя пользователя")
     slug = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     departament = models.ForeignKey(Departament, verbose_name="Отдел",
-                                    on_delete=models.CASCADE)
+                                    on_delete=models.CASCADE, null=True)
 
     class Meta:
         verbose_name = "Пользователь"
@@ -33,7 +33,7 @@ class Profile(AbstractUser):
 class Stage(models.Model):
     title = models.CharField(max_length=250, verbose_name="Стадия исполнения")
     slug = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
-    
+
     class Meta:
         verbose_name = "Стадия"
         verbose_name_plural = "Стадии"
