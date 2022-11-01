@@ -55,8 +55,7 @@ class Task(models.Model):
     date_add = models.DateTimeField(
         auto_now_add=True, verbose_name="Дата создания задания")
     deadline = models.DateTimeField(verbose_name="Срок выполнения")
-    date_end = models.DateTimeField(
-        auto_now_add=True, verbose_name="Дата выполнения")
+    date_end = models.DateTimeField(null=True, verbose_name="Дата выполнения")
 
     class Meta:
         verbose_name = "Задание"
