@@ -50,12 +50,10 @@ class Task(models.Model):
                               on_delete=models.CASCADE)
     user = models.ForeignKey(Profile, verbose_name="Пользователь",
                              on_delete=models.CASCADE)
-    comment = models.TextField(verbose_name="Комментарий",
-                               blank=True, null=True)
-    date_add = models.DateTimeField(
+    date_add = models.DateField(
         auto_now_add=True, verbose_name="Дата создания задания")
-    deadline = models.DateTimeField(verbose_name="Срок выполнения")
-    date_end = models.DateTimeField(null=True, verbose_name="Дата выполнения")
+    deadline = models.DateField(verbose_name="Срок выполнения")
+    date_end = models.DateField(null=True, verbose_name="Дата выполнения")
 
     class Meta:
         verbose_name = "Задание"
