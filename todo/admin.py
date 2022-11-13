@@ -21,7 +21,7 @@ class DepartamentAdmin(admin.ModelAdmin):
 
 
 @admin.register(Profile)
-class ProfilekAdmin(admin.ModelAdmin):
+class ProfileAdmin(admin.ModelAdmin):
     list_display = [
         'username', 'departament'
         ]

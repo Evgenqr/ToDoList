@@ -104,13 +104,17 @@ USE_I18N = True
 
 USE_TZ = True
 
-DATE_FORMAT = 'j F Y'
+DATE_FORMAT = '%d.%m.%Y'
+DATE_INPUT_FORMATS = [
+    ("%d.%m.%Y"),
+]
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_DIR = os.path.join(BASE_DIR, 
+STATIC_DIR = os.path.join(BASE_DIR,
                           'static')
 STATICFILES_DIRS = [STATIC_DIR]
 STATIC_ROOT = '/static/'

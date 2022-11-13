@@ -8,7 +8,8 @@ from todo.views import TaskAPIView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('todo.urls')),
-    path('api/v1/todolist/', TaskAPIView.as_view())
+    path('api/v1/todolist/', TaskAPIView.as_view()),
+    path('api/v1/todolist/<int:pk>/', TaskAPIView.as_view()),
 ]
 
 
