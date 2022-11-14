@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 import uuid
+from todolist import settings
 
 
 class Departament(models.Model):
@@ -47,13 +48,15 @@ class Task(models.Model):
     slug = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     text = models.TextField(verbose_name="Текст задания")
     stage = models.ForeignKey(Stage, verbose_name="Стадия выполнения",
-                              on_delete=models.CASCADE)
+                              on_delete=models.CASCADE,
+                              null=True)
     user = models.ForeignKey(Profile, verbose_name="Пользователь",
-                             on_delete=models.CASCADE)
-    date_add = models.DateField(
+                             on_delete=models.CASCADE,
+                             null=True)
+    date_add = models.DateTimeField(
         auto_now_add=True, verbose_name="Дата создания задания")
-    deadline = models.DateField(verbose_name="Срок выполнения")
-    date_end = models.DateField(null=True, verbose_name="Дата выполнения")
+    deadline = models.DateTimeField(verbose_name="Срок выполнения")
+    date_end = models.DateTimeField(null=True, verbose_name="Дата выполнения")
 
     class Meta:
         verbose_name = "Задание"

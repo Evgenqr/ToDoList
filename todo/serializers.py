@@ -3,17 +3,17 @@ from .models import Task
 from todolist import settings
 
 
-# class TaskModel:
+class TaskModel:
 
-#     def __init__(self, title, text, user_id, stage_id, date_add, deadline,
-#                  date_end):
-#         self.title = title
-#         self.text = text
-#         self.user_id = user_id
-#         self.stage_id = stage_id
-#         self.date_add = date_add
-#         self.deadline = deadline
-#         self.date_end = date_end
+    def __init__(self, title, text, user_id, stage_id, date_add, deadline,
+                 date_end):
+        self.title = title
+        self.text = text
+        self.user_id = user_id
+        self.stage_id = stage_id
+        self.date_add = date_add
+        self.deadline = deadline
+        self.date_end = date_end
 
 
 class TaskSerializer(serializers.Serializer):
@@ -22,9 +22,9 @@ class TaskSerializer(serializers.Serializer):
     user_id = serializers.IntegerField()
     stage_id = serializers.IntegerField()
     date_add = serializers.DateTimeField(read_only=True,
-                                         format=settings.DATE_FORMAT)
-    deadline = serializers.DateTimeField(format=settings.DATE_FORMAT)
-    date_end = serializers.DateTimeField(format=settings.DATE_FORMAT)
+                                         format=settings.DATETIME_FORMAT)
+    deadline = serializers.DateTimeField(format=settings.DATETIME_FORMAT)
+    date_end = serializers.DateTimeField(format=settings.DATETIME_FORMAT)
 
     def create(self, validated_data):
         return Task.objects.create(**validated_data)
